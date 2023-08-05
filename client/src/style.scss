@@ -1,0 +1,585 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,800;0,900;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,900&display=swap");
+
+$montserrat: "Montserrat", sans-serif;
+$roboto: "Roboto", sans-serif;
+$lightGreen: #9cc7c7;
+$darkgreen: #4a8a8a;
+$darkred: #722828;
+$lightred: #d38c8c;
+$headingColor: #333;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $roboto;
+    h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  button,
+  p,
+  ul,
+  div,
+  span {
+    margin: 0;
+    padding: 0;
+  }
+  .app {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    .container {
+      width: 1024px;
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      //Login & Register
+      .auth {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: $lightGreen;
+        height: 100vh;
+        position: relative;
+        .logo {
+          position: absolute;
+          width: 80px;
+          height: 80px;
+          top: 0;
+          left: -80px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        h1 {
+          font-size: 20px;
+          color: teal;
+          margin-bottom: 20px;
+          font-family: $montserrat;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          background-color: white;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+            rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          padding: 1em 10px;
+          width: 30%;
+          border-radius: 2px;
+          .inputbox {
+            position: relative;
+            input {
+              padding: 10px;
+              border: 1px solid $darkgreen;
+              outline: none;
+              border-radius: 0.2em;
+              width: 93.5%;
+              transition: 0.6s;
+              &:focus ~ label,
+              &:not([value=""]) ~ label {
+                top: -1em;
+                left: 1.5em;
+                font-size: 0.7em;
+                background-color: white;
+              }
+            }
+            label {
+              left: 0.5em;
+              top: 0.5em;
+              font-size: 1em;
+              position: absolute;
+              color: gray;
+              pointer-events: none;
+              transition: 0.3s;
+            }
+          }
+
+          button {
+            color: white;
+            padding: 10px;
+            border: none;
+            background-color: teal;
+            cursor: pointer;
+          }
+          p {
+            color: $darkred;
+            font-size: 12px;
+            text-align: center;
+          }
+          span {
+            font-size: 12px;
+            text-align: center;
+            .link {
+              color: $darkgreen;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+
+      //NAVBAR
+      .navbar {
+        .container {
+          display: flex;
+          padding: 10px 0;
+          justify-content: space-between;
+          align-items: center;
+          .logo {
+            img {
+              width: 120px;
+              height: 120px;
+              object-fit: contain;
+              mix-blend-mode: color-burn;
+              transform: scale(1);
+              transition: 0.2s;
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+          .links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            h6 {
+              font-size: 16px;
+              font-weight: 300;
+              font-family: $montserrat;
+              transform: scale(1);
+              transition: 0.4s;
+              &:hover {
+                transform: scale(1.1);
+                font-weight: 600;
+              }
+            }
+            span {
+              cursor: pointer;
+            }
+            #username {
+              transform: scale(1);
+              transition: 0.2s;
+              text-transform: uppercase;
+              color: $lightGreen;
+              &:hover {
+                transform: scale(1.1);
+                font-weight: 600;
+                color: $darkgreen;
+              }
+            }
+            #logout {
+              transform: scale(1);
+              transition: 0.2s;
+              text-transform: uppercase;
+              color: $lightred;
+              &:hover {
+                transform: scale(1.1);
+                font-weight: 600;
+                color: $darkred;
+              }
+            }
+            #login {
+              transform: scale(1);
+              transition: 0.2s;
+              text-transform: uppercase;
+              color: $lightGreen;
+              &:hover {
+                transform: scale(1.1);
+                font-weight: 600;
+                color: $darkgreen;
+              }
+            }
+            .write {
+              background-color: $lightGreen;
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 300;
+              border: 1px solid white;
+              &:hover {
+                background-color: white;
+                color: teal;
+                border: 1px solid teal;
+              }
+            }
+          }
+        }
+      }
+
+      //FOOTER
+      footer {
+        margin-top: 100px;
+        padding: 20px;
+        background-color: $lightGreen;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+          height: 50px;
+          width: 50px;
+        }
+      }
+
+      //Home
+      .home {
+        .posts {
+          margin-top: 50px;
+          display: flex;
+          flex-direction: column;
+          gap: 150px;
+          .post {
+            display: flex;
+            gap: 50px;
+            padding: 1.7em;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            transform: scale(1);
+            transition: 0.4s;
+            &:nth-child(2n + 1) {
+              flex-direction: row-reverse;
+            }
+            &:hover {
+              transition: 0.4s;
+              transform: scale(1.05);
+            }
+            .img {
+              flex: 2;
+              position: relative;
+              &::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: $lightGreen;
+                position: absolute;
+                top: 20px;
+                left: -20px;
+                z-index: -1;
+              }
+              img {
+                max-height: 400px;
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+            .content {
+              flex: 2;
+              width: 60%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              word-wrap: break-word;
+              h1 {
+                font-size: 48px;
+                font-family: $montserrat;
+                color: $headingColor;
+              }
+              #posted {
+                font-size: 10px;
+                color: $lightGreen;
+              }
+              p {
+                font-size: 18px;
+              }
+              button {
+                width: max-content;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                background-color: white;
+                border: 1px solid teal;
+                color: teal;
+
+                &:hover {
+                  border: 1px solid white;
+                  background-color: $lightGreen;
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //Single
+      .single {
+        display: flex;
+        .content {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          img {
+            width: 60%;
+            height: 300px;
+            object-fit: cover;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          }
+          .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            .info {
+              #posted {
+                color: #bab5b5;
+                font-style: italic;
+                width: 100%;
+              }
+            }
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            span {
+              font-weight: bold;
+            }
+          }
+          .edit {
+            display: flex;
+            gap: 5px;
+            img {
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+            }
+          }
+          h1 {
+            font-size: 42px;
+            color: #333;
+            font-family: $montserrat;
+          }
+          p {
+            text-align: justify;
+            line-height: 20px;
+            width: 90%;
+            word-wrap: break-word;
+          }
+        }
+        .menu {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+
+          h1 {
+            font-size: 20px;
+            color: #555;
+            font-family: $montserrat;
+          }
+
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0.5em;
+            transform: scale(1);
+            transition: 0.4s;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+              rgba(17, 17, 26, 0.05) 0px 8px 32px;
+            &:hover {
+              transform: scale(1.05);
+            }
+            img {
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+                rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            }
+            h2 {
+              font-family: $montserrat;
+              color: #555;
+            }
+            button {
+              width: max-content;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              background-color: white;
+              border: 1px solid teal;
+              color: teal;
+
+              &:hover {
+                border: 1px solid white;
+                background-color: $lightGreen;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+      //Write
+      .add {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+
+        .content {
+          flex: 5;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          input {
+            padding: 10px;
+            border: 1px solid lightgray;
+          }
+
+          .editContainer {
+            height: 300px;
+            overflow: scroll;
+            border: 1px solid lightgray;
+
+            .editor {
+              height: 100%;
+              border: none;
+            }
+          }
+        }
+
+        .menu {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .item {
+            border: 1px solid lightgray;
+            padding: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #555;
+            gap: 10px;
+
+            h1 {
+              font-size: 20px;
+              font-family: $montserrat;
+            }
+            .file {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+
+            .buttons {
+              display: flex;
+              justify-content: space-between;
+
+              :first-child {
+                cursor: pointer;
+                color: teal;
+                background-color: white;
+                border: 1px solid teal;
+                padding: 3px 5px;
+              }
+              :last-child {
+                cursor: pointer;
+                color: white;
+                background-color: teal;
+                border: 1px solid teal;
+                padding: 3px 5px;
+              }
+            }
+            .cat {
+              display: flex;
+              align-items: center;
+              color: teal;
+              gap: 2px;
+            }
+          }
+        }
+      }
+
+      //User Popup
+      .userPopupConatiner {
+        margin: 0 auto;
+        padding: 2em;
+        background-color: white;
+        position: absolute;
+        top: 5em;
+        left: 21em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 1.23em;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        #close{
+          position: absolute;
+          top:0;
+          right:0;
+          width:3em;
+          height:3em;
+          border: none;
+          background-color: red;
+          color:white;
+          border-radius: 50%;
+          cursor: pointer;
+          box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+        form {
+          flex: 1;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2em;
+          .inputbox {
+            width: 80%;
+            input {
+              padding: 10px;
+              border: 1px solid $darkgreen;
+              outline: none;
+              border-radius: 0.2em;
+              width: 93.5%;
+              &[type="file"] {
+                display: none;
+              }
+            }
+            label{
+              display: flex;
+              align-items: center;
+              font-family: $roboto;
+              font-size: 0.7em;
+              color:$darkgreen;
+            }
+          }
+          button {
+              border: 1px solid $lightGreen;
+              background-color: transparent;
+              color:$lightGreen;
+              padding: 0.5em 1em;
+              transition: 0.4s;
+              &:hover{
+                background-color: $lightGreen;
+                color:white;
+              }
+            }
+        }
+        .profilePicture {
+          width:20em;
+          max-height:20em;
+          flex: 1;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
