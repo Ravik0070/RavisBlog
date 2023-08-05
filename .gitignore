@@ -28,5 +28,8 @@ client/node_modules
 client/node_modules*
 Api/node_modules
 Api/node_modules*
+client/public/upload
+client/public/upload*
+
 
 

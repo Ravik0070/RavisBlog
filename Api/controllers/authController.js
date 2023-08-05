@@ -72,3 +72,14 @@ exports.UpdateUser = async (req,res,next) =>{
     res.status(500).json({ message: "Something went wrong." });
   }
 }
+exports.GetOwner = async (req,res,next) =>{
+  const user = await User.findById(req.params.id)
+  try {
+    !user
+      ? res.status(404).json({ message: "blog not found" })
+      : res.status(200).json({userName:user.username,userImage:user.profilePicture});
+  } catch (error) {
+    res.status(500).json(error);
+  }
+  
+}

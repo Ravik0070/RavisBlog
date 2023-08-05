@@ -10,6 +10,7 @@ router.post("/login",authController.Login);
 //logout
 router.post("/logout",authController.Logout);
 
+router.get("/getowner/:id", authController.GetOwner);
 //update user 
 router.put("/updateUser/:id",authController.UpdateUser)
 

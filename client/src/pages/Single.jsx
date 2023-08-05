@@ -11,6 +11,7 @@ import UserPopupProfile from '../components/UserPopupProfile';
 import blank from "../img/blank.png"
 
 const Single = () => {
+  const [postOwner,setPostOwner] = useState({})
   const [post, setPost] = useState({});
   const navigate = useNavigate();
   const postId = useLocation().pathname.split("/")[2];
@@ -19,6 +20,8 @@ const Single = () => {
     try {
       const res = await axios.get(`/blog/${postId}`);
       setPost(res.data);
+      const userRes = await axios.get(`/auth/getowner/${res.data.userId}`)
+      setPostOwner(userRes.data)
     } catch (error) {
       console.log(error);
     }
@@ -41,9 +44,9 @@ const Single = () => {
       <div className="content">
         <img src={post.image?`../upload/${post?.image}`: blank } alt="" />
         <div className="user">
-          {post?.userImage && <img src={post?.userImage} alt="" />}
+          <img src={postOwner.userImage ? `../upload/${postOwner.userImage}`:blank} alt="" />
           <div className="info">
-            <span>{post?.username}</span>
+            <span>{postOwner?.userName}</span>
             {post?.createdAt &&
             <p id="posted">Posted {moment(post?.createdAt).fromNow()}</p>}
           </div>
