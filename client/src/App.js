@@ -3,7 +3,6 @@ import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
-  useNavigate,
 } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -12,8 +11,6 @@ import Footer from "./components/Footer";
 import Write from "./pages/Write";
 import Single from "./pages/Single";
 import "./style.scss";
-import { AuthContext } from "./context/authContext";
-import { useContext } from "react";
 
 const Layout = () => {
   return (

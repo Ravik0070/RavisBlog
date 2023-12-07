@@ -24,7 +24,7 @@ const Register = () => {
     try {
       const res = await axios.post("auth/register", inputs)
       console.log(res)
-      if (res.data.success == false) { setError(res.data.response) } else { navigate("/login") };
+      if (res.data.success === false) { setError(res.data.response) } else { navigate("/login") };
     } catch (error) {
       setError("Something went wrong.")
     }

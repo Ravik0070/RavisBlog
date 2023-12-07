@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault()
     try {
       let res = await login(inputs);
-      if (res.data.success == false) { setError(res.data.response) }
+      if (res.data.success === false) { setError(res.data.response) }
       else { navigate("/") }
     } catch (error) {
       setError("Something went wrong.")
