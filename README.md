@@ -31,5 +31,5 @@ Make Sure to Create a .env file in ** backend**  directory and add appropriate v
 If you found and issue or would like to submit some improvement to this project, please submit an issue using the issue tab above.
 
 ## KNOWN ISSUES
-As this is a learnig project, one or two features might not work for now, like  **Save as draft**, also there are  some features that might be added in future, like **Passord recovery**, **Email verification**.
+As this is a learnig project, one or two features might not work for now, like  **Save as draft**, also there are  some features that might be added in future, like **Passord recovery**, **Email verification**, & **its not responsive yet**.
 
